@@ -1,3 +1,7 @@
+'''
+https://leetcode.com/problems/valid-parentheses/submissions/983265066/
+'''
+
 class Solution:
     def isValid(self, s: str) -> bool:
         d = {'(' : ')', '{' : '}', '[' : ']'}
