@@ -1,3 +1,8 @@
+'''
+DP: O(N) Solution
+https://leetcode.com/problems/maximum-subarray/submissions/982760620/
+'''
+
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         N = len(nums)
