@@ -1,5 +1,5 @@
 '''
-https://leetcode.com/problems/merge-strings-alternately/submissions/1109084194/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/merge-strings-alternately/submissions/1109084194/
 '''
 
 impl Solution {
