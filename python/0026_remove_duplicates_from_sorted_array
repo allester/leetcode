@@ -1,0 +1,15 @@
+'''
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1158487109/?envType=study-plan-v2&envId=top-interview-150
+'''
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        s = set()
+        k = 0
+        for num in nums:
+            if num not in s:
+                s.add(num)
+                nums[k] = num
+                k += 1
+        return k
+        
