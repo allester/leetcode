@@ -1,0 +1,18 @@
+'''
+https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/submissions/1163123111/
+'''
+
+class Solution:
+    def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
+        N = len(nums)
+        if N % 3 != 0:
+            return []
+
+        nums.sort()
+        A = []
+        for i in range(0, N, 3):
+            if nums[i+2] - nums[i] <= k:
+                A.append([nums[i], nums[i+1], nums[i+2]])
+            else:
+                return []
+        return A
