@@ -1,0 +1,14 @@
+'''
+https://leetcode.com/problems/group-anagrams/submissions/1168076986/
+'''
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        D = dict()
+        for s in strs:
+            key = ''.join(sorted(s))
+            if key in D:
+                D[key].append(s)
+            else:
+                D[key] = [s]
+        return D.values()
