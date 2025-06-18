@@ -1,19 +1,23 @@
 '''
-https://leetcode.com/problems/evaluate-reverse-polish-notation/submissions/1160671846/
+https://leetcode.com/problems/evaluate-reverse-polish-notation/submissions/1668765208/
 '''
-
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        s = []
+        nums = []
         for token in tokens:
-            if token == '+':
-                s[-1] = s[-2] + s.pop()
-            elif token == '-':
-                s[-1] = s[-2] - s.pop()
-            elif token == '*':
-                s[-1] = s[-2] * s.pop()
-            elif token == '/':
-                s[-1] = int(s[-2] / s.pop())
+            if token.isnumeric() or len(token) > 1:
+                nums.append(int(token))
             else:
-                s.append(int(token))
-        return s[0]
+                y = nums.pop()
+                x = nums.pop()
+                match (token):
+                    case '+':
+                        num = x + y
+                    case '-':
+                        num = x - y
+                    case '*':
+                        num = x * y
+                    case '/':
+                        num = int(x / y)
+                nums.append(num)
+        return nums[0]
